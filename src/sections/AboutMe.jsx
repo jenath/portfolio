@@ -1,11 +1,12 @@
 import './section_style/AboutMe.css'
+import profile_image from "../assets/Jenath.jpg"
 
 const AboutMe = () => {
 
     return (
         <>
             <section class="profile">
-                <img src="src\assets\Jenath.jpg" width="80%" alt="" />
+                <img src={profile_image} width="80%" alt="" />
             </section>
             <section class="description">
                 <p>

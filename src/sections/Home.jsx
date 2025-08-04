@@ -1,5 +1,5 @@
 import "./section_style/Home.css"
-import home_image from "src\assets\Plants.jpg"
+import home_image from "../assets/Plants.jpg"
 
 const Home = () => {
 

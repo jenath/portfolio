@@ -1,0 +1,11 @@
+.Title_1 {
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.projects_list {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0px;
+    flex-wrap: wrap;
+}

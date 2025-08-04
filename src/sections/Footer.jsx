@@ -1,0 +1,21 @@
+import './section_style/Footer.css'
+
+const Footer = () => {
+
+    return (
+        <>
+            <section class="footer">
+                <section>
+                    <h5>Contact</h5>
+                    <p>jenathkanaegsan@gmail.com</p>
+                </section>
+                <section>
+                    <h5>Location</h5>
+                    <p>Greater London</p>
+                </section>
+            </section>
+        </>
+    )
+}
+
+export default Footer

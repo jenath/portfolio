@@ -1,0 +1,15 @@
+.footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.footer section {
+    margin: 10px 20px;
+    font-size: 8pt;
+}
+

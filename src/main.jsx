@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './index.css'
 import Header from './sections/Header.jsx'
 import AboutMe from './sections/AboutMe.jsx'
@@ -12,8 +12,8 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Header />
         <Routes>
-          <Redirect exact from="/" to="/home" />
-          <Route path="/portfolio" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Navigate replace to="/" />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<AboutMe />} />
         </Routes>

@@ -1,14 +1,30 @@
 import { useState } from "react"
+import '../component_style/carousel.css'
 
-const Carousel = () => {
+const Carousel = ({ data }) => {
 
-    
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-    return(
+    const handleLeftChange = () => {
+        (currentIndex === 0) ? setCurrentIndex(data.length - 1) : setCurrentIndex(currentIndex - 1);
+    }
+
+    const handleRightChange = () => {
+        (currentIndex === data.length - 1) ? setCurrentIndex(0) : setCurrentIndex(currentIndex + 1);
+    }
+
+    return (
         <>
-            <button>`{'<'}`</button>
-                <img src="" alt="" />
-            <button>`{'>'}`</button>
+            <section class="carousel-box">
+                <section class="image-box">
+                    <img src={data[currentIndex]} alt="" />
+                </section>
+                <br />
+                <section>
+                    <button onClick={handleLeftChange}>left</button>
+                    <button onClick={handleRightChange}>right</button>
+                </section>
+            </section> 
         </>
     )
 }

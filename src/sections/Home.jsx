@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <>
             <section class="home">
-                <img src={home_image} alt="" />
+                <img src={home_image} width="50%" alt="" />
             </section>
         </>
     )

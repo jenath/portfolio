@@ -7,7 +7,7 @@ const Footer = () => {
             <section class="footer">
                 <section>
                     <h5>Contact</h5>
-                    <p>jenathkanaegsan@gmail.com</p>
+                    <p>jenathkanagesan@gmail.com</p>
                 </section>
                 <section>
                     <h5>Location</h5>

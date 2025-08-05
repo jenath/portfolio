@@ -7,7 +7,7 @@ const Header = () => {
       <section>
         <ul>
           <li>
-            <Link to="/">Home</ Link>
+            <Link to="/portfolio">Home</ Link>
           </li>
           <li>
             <Link to="/about">About Me</ Link>

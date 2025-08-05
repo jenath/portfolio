@@ -9,10 +9,10 @@ import Footer from './sections/Footer.jsx'
 
 createRoot(document.getElementById('root')).render(
   <>
-    <BrowserRouter>
+    <BrowserRouter basename='/portfolio'>
       <Header />
         <Routes>
-          <Route path="/portfolio" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<AboutMe />} />
         </Routes>

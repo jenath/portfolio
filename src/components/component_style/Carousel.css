@@ -1,3 +1,5 @@
+/* AboutMe Section */
+
 .carousel-box {
     width: 100%;
 }
@@ -11,9 +13,10 @@
 }
 
 .image-box img {
+    box-shadow:  5px 5px 5px red;
     display: block;
     margin:  auto;
-    max-width: 100%;
+    max-width: 90%;
     height: 300px;
     border-radius: 50px;
     min-width: 70%;
@@ -34,4 +37,6 @@
     padding: 10px 10px;
     border-radius: 10px;
 }
+
+/* --- */
 

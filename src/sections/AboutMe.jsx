@@ -1,10 +1,10 @@
 import './section_style/AboutMe.css';
-import Carousel from '../components/Carousel';
+import Carousel from '../components/Carousel.jsx';
 
-import profile_image from "../assets/Jenath.jpg";
-import bike from "../assets/bike.jpg"
-import junior from "../assets/junior.jpg"
-import elephant from "../assets/elephant.jpg"
+import profile_image from "../assets/jpg/profile.jpg";
+import bike from "../assets/jpg/bike.jpg"
+import junior from "../assets/jpg/junior.jpg"
+import elephant from "../assets/jpg/elephant.jpg"
 
 const images = [profile_image, bike, junior, elephant]
 

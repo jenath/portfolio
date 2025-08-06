@@ -1,6 +1,6 @@
-import '../component_style/Project_Tile.css'
+import './component_style/ProjectTile.css'
 
-const Project_Tile = ({ image, url, description }) => {
+const ProjectTile = ({ image, url, description }) => {
 
     return (
         <>
@@ -14,4 +14,4 @@ const Project_Tile = ({ image, url, description }) => {
     )
 }
 
-export default Project_Tile
+export default ProjectTile

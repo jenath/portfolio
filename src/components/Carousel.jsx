@@ -20,7 +20,7 @@ const Carousel = ({ data }) => {
                     <img src={data[currentIndex]} alt="" />
                 </section>
                 <br />
-                <section>
+                <section class="carousel-buttons">
                     <button onClick={handleLeftChange}>left</button>
                     <button onClick={handleRightChange}>right</button>
                 </section>

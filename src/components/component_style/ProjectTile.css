@@ -1,20 +1,31 @@
-#tile {
-    width: 25%;
-    height: 200px;
-    background-color: lightgreen;
-    float: left;
-    border-radius: 20%;
-    margin: 25px 25px;
+
+.tile {
+    width: 60%;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px red;
 }
 
-#tile a {
-    width: 100%;
-    height: 200px;
+.tile a {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
-#tile p {
-    text-align: center;
+.img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 120px;
+}
+
+.img-container img {
+    width: 50%;
+    height: 50%;
+}
+
+.url-container p {
+    display: block;
+    margin: auto;
 }

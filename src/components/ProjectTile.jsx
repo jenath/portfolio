@@ -4,11 +4,13 @@ const ProjectTile = ({ image, url, description }) => {
 
     return (
         <>
-            <section id="tile">
-                <a href={url}>
-                    <img width="50%" height="50%" src={image} alt="" />
+            <section className='tile'>
+                <a href={url} className='url-container'>
+                    <section className='img-container'>
+                        <img src={image} alt="" />
+                    </section>
+                    <p>{ description }</p>
                 </a>
-                <p>{description}</p>   
             </section>
         </>
     )

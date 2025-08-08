@@ -1,18 +1,23 @@
+import { use } from "react";
 import "./component_style/MemoryGame.css";
 
 const MemoryGame = () => {
 
     const number_of_buttons = 15;
     const selected_buttons = [];
+    const user_selected_buttons = [];
 
-    const random_selection = () => {
+
+    const randomSelection = () => {
         
         const playButton = document.getElementById("play_button");
         playButton.disabled = true;
         
         selected_buttons.length = 0;
+        user_selected_buttons.length = 0;
 
         const random_number = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+
         for (let i = 0; i < random_number; i++) {
             const random_button = Math.floor(Math.random() * (number_of_buttons - 1 + 1)) + 1;
             const select_random_button = document.getElementById(random_button);
@@ -27,9 +32,17 @@ const MemoryGame = () => {
                 playButton.disabled = false;
             }, 1000)
         });
-
     }
+    
+    const handleSelection = (event) => {
+        user_selected_buttons.push(event.target.id);
+        const mapped_selected_buttons = selected_buttons.map(e => e['id']);
+        console.log(user_selected_buttons);
+        console.log(mapped_selected_buttons);
 
+        // remove duplicates from array
+    }
+    
     const createGamebuttons = (number_of_buttons) => {
         const buttons_list = [];
         for (let i = 0; i < number_of_buttons; i++) {
@@ -37,6 +50,7 @@ const MemoryGame = () => {
                 <button 
                     key={i + 1} 
                     id={i + 1}
+                    onClick={handleSelection}
                 >{i + 1}</button>
             )
         };
@@ -47,16 +61,9 @@ const MemoryGame = () => {
     return (
         <>
             <section className="memory-game">
-                {/* <section className="rounds">
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>4</div>
-                    <div>5</div>
-                </section> */}
                 <section className="game-board">
                     { createGamebuttons(number_of_buttons) }
-                    <button id="play_button" onClick={random_selection}>Play</button>
+                    <button id="play_button" onClick={randomSelection}>Play</button>
                 </section>
             </section>
         </>

@@ -5,9 +5,9 @@
 }
 
 .image-box {
-    width: 50%;
+    width: 90%;
     margin: 0 auto;
-    background-color: white;
+    background-color: bisque;
     padding: 10px 10px;
     border-radius: 50px;
 }

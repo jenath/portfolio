@@ -1,5 +1,11 @@
-.home {
+.home-section {
     width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.home-background {
+    width: 50%;
     height: 100%;
     background-image: url(../../assets/jpg/plants.jpg);
     background-size: cover;
@@ -7,7 +13,10 @@
     background-position: center center;
 }
 
-.home img {
+.home-description {
+    background-color: bisque;
     width: 50%;
-    height: 50%;
+    height: 100%;
+    padding: 10%;
+    box-sizing: border-box;
 }

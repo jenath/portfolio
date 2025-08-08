@@ -4,7 +4,7 @@ const Footer = () => {
 
     return (
         <>
-            <section class="footer">
+            <section className="footer">
                 <section>
                     <h5>Contact</h5>
                     <p>jenathkanagesan@gmail.com</p>

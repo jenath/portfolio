@@ -1,0 +1,29 @@
+.memory-game {
+    display: flex;
+}
+
+.rounds {
+    width: 20%;
+}
+
+.rounds div {
+    height: 20%;
+    text-align: center;
+}
+
+.game-board {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.game-board button{
+    height: 50px;
+    flex: 1 0 18%;
+    margin: 1%;
+}
+
+.selected {
+    background-color: yellow;
+}

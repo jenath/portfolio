@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./component_style/MemoryGame.css";
 
 const MemoryGame = () => {
@@ -7,8 +7,9 @@ const MemoryGame = () => {
     const user_selected_buttons = [];
     const selected_buttons = [];
     const [result, setResult] = useState('');
-
-    const randomSelection = () => {    
+    
+    const randomSelection = () => {
+        
         const playButton = document.getElementById("play_button");
         playButton.disabled = true;
         
@@ -52,14 +53,23 @@ const MemoryGame = () => {
             return a - b;
         });
 
-        console.log(user_selected_buttons);
-        console.log(mapped_selected_buttons);
-
         if (user_selected_buttons.length !== mapped_selected_buttons.length) {
-            console.log("not same length");
+            return;
         } else {
             const areEqual = user_selected_buttons.every((value, index) => value === mapped_selected_buttons[index]);
-            areEqual ? setResult('Congratulations') : setResult('Try again');
+            if (areEqual) {
+                setTimeout(() => {
+                    setResult('');
+                }, 1000)
+
+                setResult('Congratulations');
+            } else {
+                setTimeout(() => {
+                    setResult('');
+                }, 1000)
+
+                setResult('Try again'); 
+            }
         }
     }
 

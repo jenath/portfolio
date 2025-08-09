@@ -1,15 +1,14 @@
-import { use } from "react";
+import { useState, useEffect } from "react";
 import "./component_style/MemoryGame.css";
 
 const MemoryGame = () => {
 
     const number_of_buttons = 15;
-    const selected_buttons = [];
     const user_selected_buttons = [];
+    const selected_buttons = [];
+    const [result, setResult] = useState('');
 
-
-    const randomSelection = () => {
-        
+    const randomSelection = () => {    
         const playButton = document.getElementById("play_button");
         playButton.disabled = true;
         
@@ -17,16 +16,23 @@ const MemoryGame = () => {
         user_selected_buttons.length = 0;
 
         const random_number = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
-
+        
         for (let i = 0; i < random_number; i++) {
             const random_button = Math.floor(Math.random() * (number_of_buttons - 1 + 1)) + 1;
             const select_random_button = document.getElementById(random_button);
             selected_buttons.push(select_random_button);
         }
+        
+        const selected_buttons_no_duplicates = [...new Set(selected_buttons)];
+        selected_buttons.length = 0;
 
+        selected_buttons_no_duplicates.forEach((button_value) => {
+            selected_buttons.push(button_value);
+        });
+        
         selected_buttons.forEach(button => {
             button.className = "selected";
-
+            
             setTimeout(() => {
                 button.className = "";
                 playButton.disabled = false;
@@ -37,11 +43,27 @@ const MemoryGame = () => {
     const handleSelection = (event) => {
         user_selected_buttons.push(event.target.id);
         const mapped_selected_buttons = selected_buttons.map(e => e['id']);
+        
+        user_selected_buttons.sort((a, b) => {
+            return a - b;
+        });
+        
+        mapped_selected_buttons.sort((a, b) => {
+            return a - b;
+        });
+
         console.log(user_selected_buttons);
         console.log(mapped_selected_buttons);
 
-        // remove duplicates from array
+        if (user_selected_buttons.length !== mapped_selected_buttons.length) {
+            console.log("not same length");
+        } else {
+            const areEqual = user_selected_buttons.every((value, index) => value === mapped_selected_buttons[index]);
+            areEqual ? setResult('Congratulations') : setResult('Try again');
+        }
     }
+
+
     
     const createGamebuttons = (number_of_buttons) => {
         const buttons_list = [];
@@ -63,9 +85,13 @@ const MemoryGame = () => {
             <section className="memory-game">
                 <section className="game-board">
                     { createGamebuttons(number_of_buttons) }
-                    <button id="play_button" onClick={randomSelection}>Play</button>
+                    <button 
+                        id="play_button" 
+                        onClick={randomSelection}
+                    >Play</button>
                 </section>
             </section>
+            <h1>{result}</h1>
         </>
     )
 }

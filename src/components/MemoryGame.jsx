@@ -3,10 +3,20 @@ import "./component_style/MemoryGame.css";
 
 const MemoryGame = () => {
 
+    const [info, setInfo] = useState('');
+
     const number_of_buttons = 15;
     const user_selected_buttons = [];
     const selected_buttons = [];
     const [result, setResult] = useState('');
+
+    const handleInfo = () => {
+        if (info === '') {
+            setInfo("A game to test your memory, probably a bit more fun, click the numbers that get highlighted!")
+        } else {
+            setInfo('');
+        }
+    }
     
     const randomSelection = () => {
         
@@ -62,13 +72,13 @@ const MemoryGame = () => {
                     setResult('');
                 }, 1000)
 
-                setResult('Congratulations');
+                setResult('Congratulations!');
             } else {
                 setTimeout(() => {
                     setResult('');
                 }, 1000)
 
-                setResult('Try again'); 
+                setResult('Try again!'); 
             }
         }
     }
@@ -100,8 +110,16 @@ const MemoryGame = () => {
                         onClick={randomSelection}
                     >Play</button>
                 </section>
+                <h1>{result}</h1>
+                <section className="info-button">
+                    <div className="info-button-container">
+                        <button
+                            onClick={handleInfo}
+                        >I</button>
+                    </div>
+                    <h1>{info}</h1>
+                </section>
             </section>
-            <h1>{result}</h1>
         </>
     )
 }

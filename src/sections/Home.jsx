@@ -4,13 +4,18 @@ import { useState } from "react";
 
 const Home = () => {
 
-    const [page, setPage] = useState("home-section")
+    const [page, setPage] = useState("home-section");
+    const [buttonText, setButtonText] = useState("CLICK ME");
     
 
     const handleClick = () => {
-        (page === "home-section") ?
-            setPage("game-board") :
-            setPage("home-section")
+        if (page === "home-section") {
+            setPage("game-section");
+            setButtonText("Return to home")
+        } else {
+            setPage("home-section");
+            setButtonText("CLICK ME");
+        }
     }
 
     return (
@@ -27,14 +32,16 @@ const Home = () => {
                                 But if not, click the button below theres probably something more interesting. 
                                 P.s. I would click the button aswell.
                             </p>
-                            <button onClick={ handleClick }>CLICK ME</button>
+                            <button onClick={ handleClick }>{buttonText}</button>
                         </section>
                     </section>
 
                 :
-                    <section>
+                    <section className="game-section">
                         <MemoryGame />
-                        <button onClick={ handleClick }>CLICK ME</button>
+                        <div className="return-home-button">
+                            <button onClick={ handleClick }>{buttonText}</button>
+                        </div>
                     </section>
             }
         </>

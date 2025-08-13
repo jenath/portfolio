@@ -1,3 +1,3 @@
-# portfolio Website
+# Portfolio Website
 
 [portfolio link](https://jenath.github.io/portfolio/)
